@@ -1,0 +1,5 @@
+{
+  "name": "QuickBite Food Ordering",
+  "description": "A modern and intuitive food ordering web application that allows users to browse a menu, add items to a cart, and manage their order. Built with React and Tailwind CSS.",
+  "requestFramePermissions": []
+}

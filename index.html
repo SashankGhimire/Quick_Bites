@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuickBite Food Ordering</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Poppins', 'sans-serif'],
+            },
+            colors: {
+              primary: {
+                DEFAULT: '#F97316',
+                '50': '#FFF7ED',
+                '100': '#FFEDD5',
+                '200': '#FED7AA',
+                '300': '#FDBA74',
+                '400': '#FB923C',
+                '500': '#F97316',
+                '600': '#EA580C',
+                '700': '#C2410C',
+                '800': '#9A3412',
+                '900': '#7C2D12',
+                '950': '#431407',
+              },
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideIn: {
+                'from': { transform: 'translateX(100%)', opacity: '0' },
+                'to': { transform: 'translateX(0)', opacity: '1' },
+              },
+              fadeOut: {
+                'from': { opacity: '1' },
+                'to': { opacity: '0' },
+              }
+            },
+            animation: {
+              fadeIn: 'fadeIn 0.8s ease-out forwards',
+              slideIn: 'slideIn 0.3s ease-out forwards',
+              fadeOut: 'fadeOut 0.3s ease-out forwards',
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.8.2"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-slate-50 text-slate-700">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
