@@ -5,6 +5,7 @@ interface AuthContextType {
   isAuthenticated: boolean;
   login: (user: string, pass: string) => Promise<void>;
   logout: () => void;
+  signup: (user: string, pass: string) => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -25,13 +26,25 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     });
   }, []);
 
+  const signup = useCallback((user: string, pass: string) => {
+    return new Promise<void>((resolve, reject) => {
+      // Demo signup logic: accept any non-empty credentials
+      if (user && pass) {
+        setIsAuthenticated(true);
+        resolve();
+      } else {
+        reject(new Error('Please enter a valid email and password.'));
+      }
+    });
+  }, []);
+
   const logout = useCallback(() => {
     setIsAuthenticated(false);
     clearCart();
   }, [clearCart]);
   
   return (
-    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
+    <AuthContext.Provider value={{ isAuthenticated, login, logout, signup }}>
       {children}
     </AuthContext.Provider>
   );

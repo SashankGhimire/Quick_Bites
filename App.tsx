@@ -4,6 +4,7 @@ import { CartProvider } from './context/CartContext';
 import { AuthProvider } from './context/AuthContext';
 import { ToastProvider } from './context/ToastContext';
 import Header from './components/Header';
+import SignupPage from './components/pages/SignupPage';
 import MenuPage from './components/pages/MenuPage';
 import CartPage from './components/pages/CartPage';
 import HomePage from './components/pages/HomePage';
@@ -29,6 +30,7 @@ const App: React.FC = () => {
                                     <Route path="/menu" element={<MenuPage />} />
                                     <Route path="/about" element={<AboutUsPage />} />
                                     <Route path="/login" element={<LoginPage />} />
+                                    <Route path="/signup" element={<SignupPage />} />
                                     <Route 
                                         path="/profile"
                                         element={

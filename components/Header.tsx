@@ -57,7 +57,7 @@ const Header: React.FC = () => {
         }`;
 
     return (
-        <header className="bg-white shadow-sm sticky top-0 z-50 border-b border-slate-200">
+    <header className="bg-white/90 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-slate-200">
             <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-20">
                     {/* Logo */}
@@ -68,7 +68,7 @@ const Header: React.FC = () => {
                     </div>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden md:flex items-center space-x-8">
+                    <div className="hidden md:flex items-center space-x-6">
                          <NavLink to="/" className={navLinkClasses} end>
                             Home
                         </NavLink>
@@ -105,9 +105,14 @@ const Header: React.FC = () => {
                                     </button>
                                 </>
                             ) : (
-                                <Link to="/login" className="px-4 py-2 text-sm font-semibold bg-primary-500 text-white rounded-full hover:bg-primary-600 transition-colors">
-                                    Login
-                                </Link>
+                                <>
+                                    <Link to="/login" className="px-4 py-2 text-sm font-semibold bg-primary-500 text-white rounded-full hover:bg-primary-600 transition-colors">
+                                        Login
+                                    </Link>
+                                    <Link to="/signup" className="ml-2 px-4 py-2 text-sm font-semibold bg-orange-500 text-white rounded-full hover:bg-orange-600 transition-colors">
+                                        Sign Up
+                                    </Link>
+                                </>
                             )}
                         </div>
                         
@@ -162,9 +167,14 @@ const Header: React.FC = () => {
                                 </button>
                             </>
                         ) : (
-                            <NavLink to="/login" className={mobileNavLinkClasses} onClick={() => setMobileMenuOpen(false)}>
-                                Login
-                            </NavLink>
+                            <>
+                                <NavLink to="/login" className={mobileNavLinkClasses} onClick={() => setMobileMenuOpen(false)}>
+                                    Login
+                                </NavLink>
+                                <NavLink to="/signup" className={mobileNavLinkClasses} onClick={() => setMobileMenuOpen(false)}>
+                                    Sign Up
+                                </NavLink>
+                            </>
                         )}
                     </div>
                 </div>

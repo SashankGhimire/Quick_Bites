@@ -1,3 +1,14 @@
+// Function to remove an order by id
+export const removeOrder = (orderId: string): Promise<void> => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            const orders = getStoredOrders();
+            const updatedOrders = orders.filter(order => order.id !== orderId);
+            saveStoredOrders(updatedOrders);
+            resolve();
+        }, 300);
+    });
+};
 import { Order, CartItem } from '../types';
 
 const STORAGE_KEY = 'quickbite_orders';
