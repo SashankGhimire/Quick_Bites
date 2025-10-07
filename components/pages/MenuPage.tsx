@@ -90,7 +90,7 @@ const MenuPage: React.FC = () => {
                     <div key={category} className="mb-12">
                         <h2 className="text-3xl font-bold text-slate-800 border-b-2 border-primary-300 pb-2 mb-6">{category}</h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                            {items.map((item) => (
+                            {(items as FoodItem[]).map((item) => (
                                 <MenuItem 
                                     key={item.id} 
                                     item={item} 
