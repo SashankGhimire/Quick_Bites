@@ -29,7 +29,7 @@ const menuData: FoodItem[] = [
   
   // Desserts
   { id: 21, name: 'Chocolate Lava Cake', description: 'Warm chocolate cake with a gooey molten center.', price: 6.99, category: 'Desserts', imageUrl: 'https://bluebowlrecipes.com/wp-content/uploads/2022/01/molten-chocolate-lava-cakes-for-two-7641.jpg' },
-  { id: 22, name: 'New York Cheesecake', description: 'Creamy cheesecake with a graham cracker crust.', price: 5.99, category: 'Desserts', imageUrl: 'https://namelymarly.com/wp-content/uploads/2016/06/Vegan_New_York_Cheesecake_02-web.jpg' },
+  { id: 22, name: 'New York Cheesecake', description: 'Creamy cheesecake with a graham cracker crust.', price: 5.99, category: 'Desserts', imageUrl: 'https://www.browneyedbaker.com/wp-content/uploads/2021/10/new-york-cheesecake-21-square.jpg ' },
   
   // Drinks
   { id: 8, name: 'Coca-Cola', description: 'Chilled soft drink.', price: 1.99, category: 'Drinks', imageUrl: 'https://cdnimg.webstaurantstore.com/images/products/large/473849/1928114.jpg' },
