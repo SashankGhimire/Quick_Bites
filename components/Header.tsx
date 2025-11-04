@@ -19,7 +19,7 @@ const UserIcon = () => (
 
 const Header: React.FC = () => {
     const { cartCount } = useCart();
-    const { isAuthenticated, logout } = useAuth();
+    const { isAuthenticated, logout } = useAuth();  
     const { addToast } = useToast();
     const [isAnimating, setIsAnimating] = useState(false);
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
