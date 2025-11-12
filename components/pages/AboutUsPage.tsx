@@ -36,115 +36,104 @@ const AboutUsPage: React.FC = () => {
                 
             </div>
             
-            {/* Map + info sidebar (responsive). On md+ screens this shows side-by-side. */}
+            {/* Location and Contact Information */}
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-                    {/* Map */}
-                    <div>
-                        <h3 className="text-2xl font-semibold text-slate-800 mb-4">Our Location</h3>
-                        <div className="w-full rounded-lg overflow-hidden shadow-lg">
-                            <iframe
-                                title="QuickBite location map"
-                                src="https://maps.google.com/maps?q=labin+Mall&z=15&output=embed"
-                                className="w-full h-64 md:h-[480px] border-0"
-                                loading="lazy"
-                                allowFullScreen
-                                referrerPolicy="no-referrer-when-downgrade"
-                            />
-                        </div>
+                <div className="bg-white rounded-lg shadow-lg border border-slate-100 overflow-hidden">
+                    {/* Map Section */}
+                    <div className="w-full h-[300px] relative">
+                        <iframe
+                            title="QuickBite location map"
+                            src="https://maps.google.com/maps?q=labin+Mall&z=15&output=embed"
+                            className="w-full h-full border-0"
+                            loading="lazy"
+                            allowFullScreen
+                            referrerPolicy="no-referrer-when-downgrade"
+                        />
                     </div>
 
-                    {/* Sidebar with address, hours and actions */}
-                    <aside className="bg-white rounded-lg p-6 shadow-lg border border-slate-100">
-                        <div className="flex items-start justify-between">
+                    {/* Info Section */}
+                    <div className="p-6">
+                        <div className="grid md:grid-cols-2 gap-8">
+                            {/* Left Column - Contact Info */}
                             <div>
-                                <h4 className="text-xl font-semibold text-slate-800 mb-1 flex items-center gap-2">
-                                    {/* small location pin svg */}
+                                <h4 className="text-xl font-semibold text-slate-800 mb-3 flex items-center gap-2">
                                     <svg className="w-5 h-5 text-primary-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 11c1.656 0 3-1.344 3-3s-1.344-3-3-3-3 1.344-3 3 1.344 3 3 3z" />
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 22s8-4.5 8-11a8 8 0 10-16 0c0 6.5 8 11 8 11z" />
                                     </svg>
                                     Visiting Info
                                 </h4>
-                                <p className="text-slate-600">Find us at:</p>
+                                <address className="not-italic text-slate-700 mb-6 leading-relaxed">
+                                    <strong className="block text-slate-800">Labin Mall</strong>
+                                    <span className="block">123 Main Street, Near Central Plaza</span>
+                                    <span className="block">Kathmandu, Nepal</span>
+                                    <span className="block mt-2">Phone: <a href="tel:+97712345678" className="text-primary-600 hover:underline">+977-1-2345678</a></span>
+                                    <span className="block">Email: <a href="mailto:info@quickbite.com" className="text-primary-600 hover:underline">info@quickbite.com</a></span>
+                                </address>
+
+                                <div className="flex flex-wrap gap-3 mb-6">
+                                    <a
+                                        href="https://www.google.com/maps/dir/?api=1&destination=labin+Mall"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-primary-600 text-white rounded-md hover:bg-primary-700 transition-shadow shadow"
+                                        aria-label="Get directions to Labin Mall"
+                                    >
+                                        <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                        </svg>
+                                        Get directions
+                                    </a>
+
+                                    <a
+                                        href="tel:+97712345678"
+                                        className="inline-flex items-center justify-center gap-2 px-4 py-2 border border-slate-200 text-slate-700 rounded-md hover:bg-slate-50 transition"
+                                        aria-label="Call QuickBite"
+                                    >
+                                        <svg className="w-4 h-4 text-slate-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a2 2 0 011.9 1.38l.7 2.1a2 2 0 01-.45 2.09L8.91 10.91a16.01 16.01 0 006.18 6.18l2.34-1.82a2 2 0 012.09-.45l2.1.7A2 2 0 0121 17.72V21a2 2 0 01-2 2A19 19 0 013 5z" />
+                                        </svg>
+                                        Call us
+                                    </a>
+                                </div>
+
+                                <ul className="text-sm text-slate-500 space-y-1">
+                                    <li>🅿️ Free parking available nearby</li>
+                                    <li>♿ Wheelchair accessible entrance & seating</li>
+                                    <li>🧑‍🤝‍🧑 Family-friendly environment</li>
+                                </ul>
+                            </div>
+
+                            {/* Right Column - Opening Hours */}
+                            <div className="border-t md:border-t-0 md:border-l border-slate-100 pt-6 md:pt-0 md:pl-8">
+                                <h5 className="font-medium text-slate-800 mb-4 flex items-center gap-2">
+                                    <svg className="w-4 h-4 text-slate-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l2 2" />
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 2a10 10 0 100 20 10 10 0 000-20z" />
+                                    </svg>
+                                    Opening Hours
+                                </h5>
+                                <ul className="text-slate-700 space-y-2" aria-label="Opening hours list">
+                                    <li className="flex justify-between py-1">
+                                        <span>Monday - Thursday</span>
+                                        <span className="font-medium">9:00 AM — 9:00 PM</span>
+                                    </li>
+                                    <li className="flex justify-between py-1">
+                                        <span>Friday</span>
+                                        <span className="font-medium">9:00 AM — 10:00 PM</span>
+                                    </li>
+                                    <li className="flex justify-between py-1">
+                                        <span>Saturday</span>
+                                        <span className="font-medium">10:00 AM — 10:00 PM</span>
+                                    </li>
+                                    <li className="flex justify-between py-1">
+                                        <span>Sunday</span>
+                                        <span className="font-medium">10:00 AM — 8:00 PM</span>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
-
-                        <address className="not-italic text-slate-700 mb-4 mt-4 leading-relaxed">
-                            <strong className="block text-slate-800">Labin Mall</strong>
-                            <span className="block">Near Central Plaza</span>
-                            <span className="block">City, Country</span>
-                        </address>
-
-                        <div className="border-t border-slate-100 pt-4 mb-4">
-                            <h5 className="font-medium text-slate-800 mb-3 flex items-center gap-2">
-                                {/* clock svg */}
-                                <svg className="w-4 h-4 text-slate-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l2 2" />
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 2a10 10 0 100 20 10 10 0 000-20z" />
-                                </svg>
-                                Opening Hours
-                            </h5>
-                            <ul className="text-slate-700 text-sm leading-relaxed" aria-label="Opening hours list">
-                                <li className="flex justify-between py-1">
-                                    <span>Mon</span>
-                                    <span className="font-medium">9:00 AM — 9:00 PM</span>
-                                </li>
-                                <li className="flex justify-between py-1">
-                                    <span>Tue</span>
-                                    <span className="font-medium">9:00 AM — 9:00 PM</span>
-                                </li>
-                                <li className="flex justify-between py-1">
-                                    <span>Wed</span>
-                                    <span className="font-medium">9:00 AM — 9:00 PM</span>
-                                </li>
-                                <li className="flex justify-between py-1">
-                                    <span>Thu</span>
-                                    <span className="font-medium">9:00 AM — 9:00 PM</span>
-                                </li>
-                                <li className="flex justify-between py-1">
-                                    <span>Fri</span>
-                                    <span className="font-medium">9:00 AM — 10:00 PM</span>
-                                </li>
-                                <li className="flex justify-between py-1">
-                                    <span>Sat</span>
-                                    <span className="font-medium">10:00 AM — 10:00 PM</span>
-                                </li>
-                                <li className="flex justify-between py-1">
-                                    <span>Sun</span>
-                                    <span className="font-medium">10:00 AM — 8:00 PM</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div className="flex flex-col sm:flex-row gap-3">
-                            <a
-                                href="https://www.google.com/maps/dir/?api=1&destination=labin+Mall"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2 bg-primary-600 text-white rounded-md hover:bg-primary-700 transition-shadow shadow"
-                                aria-label="Get directions to Labin Mall"
-                            >
-                                <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                </svg>
-                                Get directions
-                            </a>
-
-                            <a
-                                href="tel:+1234567890"
-                                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2 border border-slate-200 text-slate-700 rounded-md hover:bg-slate-50 transition"
-                                aria-label="Call QuickBite"
-                            >
-                                <svg className="w-4 h-4 text-slate-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a2 2 0 011.9 1.38l.7 2.1a2 2 0 01-.45 2.09L8.91 10.91a16.01 16.01 0 006.18 6.18l2.34-1.82a2 2 0 012.09-.45l2.1.7A2 2 0 0121 17.72V21a2 2 0 01-2 2A19 19 0 013 5z" />
-                                </svg>
-                                Call us
-                            </a>
-                        </div>
-
-                        <p className="text-sm text-slate-500 mt-4">Parking available nearby. Wheelchair accessible entrance.</p>
-                    </aside>
+                    </div>
                 </div>
             </div>
         </div>
