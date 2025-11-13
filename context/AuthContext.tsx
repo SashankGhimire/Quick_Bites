@@ -1,5 +1,5 @@
-import React, { createContext, useState, useContext, ReactNode, useCallback } from 'react';
-import { useCart } from './CartContext';
+import React, { createContext, useState, useContext, ReactNode, useCallback } from "react";
+import { useCart } from "./CartContext";
 
 interface AuthContextType {
   isAuthenticated: boolean;
@@ -17,11 +17,11 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const login = useCallback((user: string, pass: string) => {
     return new Promise<void>((resolve, reject) => {
       // Demo login logic
-      if (user === 'admin' && pass === 'admin') {
+      if (user === "admin" && pass === "admin") {
         setIsAuthenticated(true);
         resolve();
       } else {
-        reject(new Error('Invalid credentials'));
+        reject(new Error("Invalid credentials"));
       }
     });
   }, []);
@@ -33,7 +33,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         setIsAuthenticated(true);
         resolve();
       } else {
-        reject(new Error('Please enter a valid email and password.'));
+        reject(new Error("Please enter a valid email and password."));
       }
     });
   }, []);
@@ -42,7 +42,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     setIsAuthenticated(false);
     clearCart();
   }, [clearCart]);
-  
+
   return (
     <AuthContext.Provider value={{ isAuthenticated, login, logout, signup }}>
       {children}
@@ -53,7 +53,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 export const useAuth = (): AuthContextType => {
   const context = useContext(AuthContext);
   if (!context) {
-    throw new Error('useAuth must be used within an AuthProvider');
+    throw new Error("useAuth must be used within an AuthProvider");
   }
   return context;
 };

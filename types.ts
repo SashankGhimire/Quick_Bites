@@ -1,4 +1,3 @@
-
 export interface FoodItem {
   id: number;
   name: string;
@@ -24,5 +23,5 @@ export interface Order {
   date: string;
   items: OrderItem[];
   total: number;
-  status: 'Processing' | 'Shipped' | 'Delivered';
+  status: "Processing" | "Shipped" | "Delivered";
 }

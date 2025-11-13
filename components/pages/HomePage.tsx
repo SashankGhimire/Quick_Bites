@@ -151,20 +151,13 @@ const HomePage: React.FC = () => {
         }}
         aria-labelledby="hero-heading"
       >
-        <div
-          className="absolute inset-0 bg-black bg-opacity-50"
-          aria-hidden="true"
-        ></div>
+        <div className="absolute inset-0 bg-black bg-opacity-50" aria-hidden="true"></div>
         <div className="relative z-10 text-center p-4">
-          <h1
-            id="hero-heading"
-            className="text-5xl md:text-7xl font-extrabold drop-shadow-lg mb-4"
-          >
+          <h1 id="hero-heading" className="text-5xl md:text-7xl font-extrabold drop-shadow-lg mb-4">
             Welcome to QuickBite
           </h1>
           <p className="text-lg md:text-2xl mb-8 max-w-2xl drop-shadow-md">
-            Delicious food delivered right to your door. Fresh, fast, and
-            unforgettable.
+            Delicious food delivered right to your door. Fresh, fast, and unforgettable.
           </p>
           <Link
             to="/menu"
@@ -179,36 +172,27 @@ const HomePage: React.FC = () => {
 
       <section className="py-20 bg-slate-100">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold text-slate-800 mb-12">
-            How It Works
-          </h2>
+          <h2 className="text-4xl font-bold text-slate-800 mb-12">How It Works</h2>
           <div className="grid md:grid-cols-3 gap-12">
             <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md transition-shadow hover:shadow-xl duration-300">
               <BrowseIcon />
-              <h3 className="text-2xl font-semibold text-slate-700 mb-2">
-                1. Browse Menu
-              </h3>
+              <h3 className="text-2xl font-semibold text-slate-700 mb-2">1. Browse Menu</h3>
               <p className="text-slate-600">
                 Explore our diverse menu of pizzas, burgers, salads, and more.
               </p>
             </div>
             <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md transition-shadow hover:shadow-xl duration-300">
               <OrderIcon />
-              <h3 className="text-2xl font-semibold text-slate-700 mb-2">
-                2. Place Your Order
-              </h3>
+              <h3 className="text-2xl font-semibold text-slate-700 mb-2">2. Place Your Order</h3>
               <p className="text-slate-600">
                 Add your favorite items to the cart and checkout in seconds.
               </p>
             </div>
             <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md transition-shadow hover:shadow-xl duration-300">
               <EnjoyIcon />
-              <h3 className="text-2xl font-semibold text-slate-700 mb-2">
-                3. Enjoy Your Meal
-              </h3>
+              <h3 className="text-2xl font-semibold text-slate-700 mb-2">3. Enjoy Your Meal</h3>
               <p className="text-slate-600">
-                Get your delicious food delivered hot and fresh to your
-                doorstep.
+                Get your delicious food delivered hot and fresh to your doorstep.
               </p>
             </div>
           </div>
@@ -219,27 +203,17 @@ const HomePage: React.FC = () => {
       {featuredItems.length > 0 && (
         <section className="py-20">
           <div className="container mx-auto px-6">
-            <h2 className="text-4xl font-bold text-slate-800 mb-12 text-center">
-              Featured Dishes
-            </h2>
+            <h2 className="text-4xl font-bold text-slate-800 mb-12 text-center">Featured Dishes</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {featuredItems.map((item) => (
                 <div
                   key={item.id}
                   className="bg-white rounded-lg shadow-lg overflow-hidden transition-shadow hover:shadow-xl duration-300 flex flex-col"
                 >
-                  <img
-                    src={item.imageUrl}
-                    alt={item.name}
-                    className="w-full h-56 object-cover"
-                  />
+                  <img src={item.imageUrl} alt={item.name} className="w-full h-56 object-cover" />
                   <div className="p-6 flex flex-col flex-grow">
-                    <h3 className="text-xl font-semibold text-slate-800">
-                      {item.name}
-                    </h3>
-                    <p className="text-slate-600 mt-2 flex-grow">
-                      {item.description}
-                    </p>
+                    <h3 className="text-xl font-semibold text-slate-800">{item.name}</h3>
+                    <p className="text-slate-600 mt-2 flex-grow">{item.description}</p>
                     <div className="mt-4 flex justify-between items-center">
                       <span className="text-lg font-bold text-primary-600">
                         ${item.price.toFixed(2)}
@@ -271,9 +245,7 @@ const HomePage: React.FC = () => {
 
       <section className="py-20 bg-slate-100">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold text-slate-800 mb-12">
-            What Our Customers Say
-          </h2>
+          <h2 className="text-4xl font-bold text-slate-800 mb-12">What Our Customers Say</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <div
@@ -285,15 +257,9 @@ const HomePage: React.FC = () => {
                   alt={testimonial.name}
                   className="w-20 h-20 mx-auto rounded-full -mt-16 border-4 border-white shadow-md"
                 />
-                <p className="text-slate-600 italic mt-6">
-                  "{testimonial.quote}"
-                </p>
-                <p className="mt-4 font-bold text-lg text-slate-800">
-                  {testimonial.name}
-                </p>
-                <p className="text-sm text-primary-500 font-semibold">
-                  {testimonial.title}
-                </p>
+                <p className="text-slate-600 italic mt-6">"{testimonial.quote}"</p>
+                <p className="mt-4 font-bold text-lg text-slate-800">{testimonial.name}</p>
+                <p className="text-sm text-primary-500 font-semibold">{testimonial.title}</p>
               </div>
             ))}
           </div>
@@ -304,44 +270,33 @@ const HomePage: React.FC = () => {
 
       <section className="bg-white py-20">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-slate-800 mb-12 text-center">
-            Why Choose Us?
-          </h2>
+          <h2 className="text-4xl font-bold text-slate-800 mb-12 text-center">Why Choose Us?</h2>
           <div className="grid md:grid-cols-3 gap-12 text-center">
             <div className="p-6">
               <div className="flex justify-center mb-4">
                 <QualityIcon />
               </div>
-              <h3 className="text-2xl font-semibold text-slate-700 mb-2">
-                Quality Ingredients
-              </h3>
+              <h3 className="text-2xl font-semibold text-slate-700 mb-2">Quality Ingredients</h3>
               <p className="text-slate-600">
-                We use only the freshest and highest quality ingredients for our
-                dishes.
+                We use only the freshest and highest quality ingredients for our dishes.
               </p>
             </div>
             <div className="p-6">
               <div className="flex justify-center mb-4">
                 <DeliveryIcon />
               </div>
-              <h3 className="text-2xl font-semibold text-slate-700 mb-2">
-                Fast Delivery
-              </h3>
+              <h3 className="text-2xl font-semibold text-slate-700 mb-2">Fast Delivery</h3>
               <p className="text-slate-600">
-                Our delivery team is committed to getting your food to you
-                quickly.
+                Our delivery team is committed to getting your food to you quickly.
               </p>
             </div>
             <div className="p-6">
               <div className="flex justify-center mb-4">
                 <TasteIcon />
               </div>
-              <h3 className="text-2xl font-semibold text-slate-700 mb-2">
-                Unforgettable Taste
-              </h3>
+              <h3 className="text-2xl font-semibold text-slate-700 mb-2">Unforgettable Taste</h3>
               <p className="text-slate-600">
-                Our chefs are passionate about creating delicious and memorable
-                meals.
+                Our chefs are passionate about creating delicious and memorable meals.
               </p>
             </div>
           </div>
