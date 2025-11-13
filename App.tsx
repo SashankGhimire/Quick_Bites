@@ -15,6 +15,7 @@ import ProfilePage from "./components/pages/ProfilePage";
 import ToastContainer from "./components/ToastContainer";
 import CheckoutPage from "./components/pages/CheckoutPage";
 import Logo from "./components/Logo";
+import ScrollToTop from "./components/ScrollToTop";
 
 const App: React.FC = () => {
   return (
@@ -22,6 +23,7 @@ const App: React.FC = () => {
       <CartProvider>
         <AuthProvider>
           <HashRouter>
+            <ScrollToTop />
             <div className="flex flex-col min-h-screen">
               <Header />
               <main className="flex-grow">

@@ -8,6 +8,7 @@ const AboutUsPage: React.FC = () => {
           <h1 className="text-5xl font-extrabold text-slate-900 mb-4 tracking-tight">
             About QuickBite
           </h1>
+          <div className="w-24 h-1 bg-primary-500 mx-auto rounded-full mb-6"></div>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             Delivering happiness, one meal at a time.
           </p>
@@ -71,6 +72,7 @@ const AboutUsPage: React.FC = () => {
                 </svg>
                 Our Location
               </h3>
+              <div className="w-24 h-1 bg-primary-500 mx-auto rounded-full mt-3 mb-2"></div>
               <p className="mt-2 text-sm text-slate-500">
                 Find us at Labin Mall — open daily for dine-in & takeout.
               </p>

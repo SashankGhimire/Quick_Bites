@@ -56,6 +56,7 @@ const MenuPage: React.FC = () => {
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-extrabold text-slate-900 mb-4">Our Menu</h1>
+        <div className="w-24 h-1 bg-primary-500 mx-auto rounded-full mb-6"></div>
         <div className="relative max-w-lg mx-auto">
           <input
             type="text"
@@ -105,11 +106,7 @@ const MenuPage: React.FC = () => {
             <h2 className="text-3xl font-bold text-slate-800 border-b-2 border-primary-300 pb-2 mb-6">
               {category}
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-              {(items as FoodItem[]).map((item) => (
-                <MenuItem key={item.id} item={item} />
-              ))}
-            </div>
+            <CategoryGrid items={items} category={category} />
           </div>
         ))
       ) : (
@@ -126,3 +123,37 @@ const MenuPage: React.FC = () => {
 };
 
 export default MenuPage;
+
+// ---------- Helper component: CategoryGrid (shows 4 items by default, with View more) ----------
+import React, { useState } from "react";
+
+interface CategoryGridProps {
+  items: FoodItem[];
+  category: string;
+}
+
+const CategoryGrid: React.FC<CategoryGridProps> = ({ items, category }) => {
+  const [expanded, setExpanded] = useState(false);
+  const visibleCount = 4;
+  const toShow = expanded ? items : items.slice(0, visibleCount);
+
+  return (
+    <>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        {toShow.map((item) => (
+          <MenuItem key={item.id} item={item} />
+        ))}
+      </div>
+      {items.length > visibleCount && (
+        <div className="mt-6 text-center">
+          <button
+            onClick={() => setExpanded((s) => !s)}
+            className="inline-flex items-center gap-2 px-6 py-2 bg-white border border-slate-300 rounded-full text-slate-700 hover:bg-slate-50 transition"
+          >
+            {expanded ? "View Less" : `View More (${items.length - visibleCount})`}
+          </button>
+        </div>
+      )}
+    </>
+  );
+};
