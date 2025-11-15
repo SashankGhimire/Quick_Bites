@@ -4,8 +4,8 @@ import { useAuth } from "../../context/AuthContext";
 import { useToast } from "../../context/ToastContext";
 
 const LoginPage: React.FC = () => {
-  const [email, setEmail] = useState("admin");
-  const [password, setPassword] = useState("admin");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
@@ -14,7 +14,8 @@ const LoginPage: React.FC = () => {
   const { login } = useAuth();
   const { addToast } = useToast();
 
-  const from = location.state?.from?.pathname || "/menu";
+  // Redirect after login → default: home page
+  const from = location.state?.from?.pathname || "/";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,6 +28,7 @@ const LoginPage: React.FC = () => {
       navigate(from, { replace: true });
     } catch (err: any) {
       setError(err.message || "Failed to sign in. Please check your credentials.");
+      addToast(err?.message || "Failed to sign in.", "error");
     } finally {
       setIsLoading(false);
     }
@@ -39,10 +41,6 @@ const LoginPage: React.FC = () => {
           <h1 className="text-3xl font-extrabold text-center text-slate-900">
             Sign in to your account
           </h1>
-          <p className="mt-2 text-center text-sm text-slate-600">
-            Use demo credentials:{" "}
-            <span className="font-medium text-primary-600">admin / admin</span>
-          </p>
         </div>
 
         {error && (

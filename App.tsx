@@ -29,10 +29,21 @@ const App: React.FC = () => {
               <main className="flex-grow">
                 <Routes>
                   <Route path="/" element={<HomePage />} />
-                  <Route path="/menu" element={<MenuPage />} />
+
+                  {/* Protected: Menu */}
+                  <Route
+                    path="/menu"
+                    element={
+                      <ProtectedRoute>
+                        <MenuPage />
+                      </ProtectedRoute>
+                    }
+                  />
+
                   <Route path="/about" element={<AboutUsPage />} />
                   <Route path="/login" element={<LoginPage />} />
                   <Route path="/signup" element={<SignupPage />} />
+
                   <Route
                     path="/profile"
                     element={
